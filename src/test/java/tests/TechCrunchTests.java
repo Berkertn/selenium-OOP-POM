@@ -71,12 +71,11 @@ public class TechCrunchTests extends BaseTest {
         WebElement randomArticle = articles.get(randomNumber);
 
         scrollToTheElement(randomArticle);
-        highlightElement(randomArticle);
 
         articlesTitle = homePage.getElementText(randomArticle.findElement(homePage.articlesTitleSelector));
 
         articles.get(randomNumber).click(); // click random article
-        articleDetailsPage.setBrowserTitle();//setting title after the navigated new page
+        articleDetailsPage.setBrowserTitle(); //setting title after the navigated new page
 
         softAssertion.assertTrue((articlesTitle + " | TechCrunch").equals(articleDetailsPage.getBrowserTitle()));
         softAssertion.assertAll("expected: " + (articlesTitle + " | TechCrunch" + "actual:" + articleDetailsPage.getBrowserTitle()));
